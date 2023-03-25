@@ -1,8 +1,8 @@
     Kanban's missions to fulfill : 
 O    - Récupérer dynamiquement les données des travaux via l’API
-X    - Ajouter le tri des projets par catégorie dans la galerie
+O    - Ajouter le tri des projets par catégorie dans la galerie
 X    - Intégrer la page de connexion pour le site:
-X        - intégration du formulaire de connexion au site
+O        - intégration du formulaire de connexion au site
 X        - affichage du message d'erreur "Erreur dans l'identifiant ou le mot de passe" lorsque le couple id/mdp n'est pas bon 
 X        - Redirection vers la page du site avec des boutons d'actions lorsque le couple id/mdp est correct
 X    - Ajouter la modale pour gérer les projets:
