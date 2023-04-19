@@ -14,23 +14,105 @@
 </head>
 
 <body>
+	<section class="modal-management">
+		<div id="modal" class="modal-btn">
+			<img src="/assets/icons/pen-to-square-white.png" alt="pen-to-square icon">
+			<p>Mode édition</p>
+			<button class="btn-modal">publier les changements</button>
+
+		</div>
+	</section>
 	<header>
 		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 		<nav>
-			<ul>
+			<ul class="links-nav">
 				<li>projets</li>
 				<li>contact</li>
-				<li>login</li>
+				<li><a href="login.html">login</a></li>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
+
+		<aside class="modal-main" id="modal-box1" aria-hidden="true" role="dialog" aria-modal="false"
+			aria-labelledby="titlemodal" style="display:none">
+			<div id="gallery_modal" class="modal-box-content">
+				<span class="js-close">&times;</span>
+				<h2 id="titlemodal">Galerie photo</h2>
+				<div class="modal-gallery"></div>
+				<div class="modal-border"></div>
+				<div class="modal-btns">
+					<a href="#modal-box2" class="js-modal-box2" id="modal-box-add">Ajouter une photo</a>
+					<a id="modal-box-delete">Supprimer la galerie</a>
+				</div>
+			</div>
+
+		</aside>
+
+		<aside class="modal-main" id="modal-box2" aria-hidden="true" role="dialog" aria-modal="false"
+			aria-labelledby="modal-add-title" style="display:none">
+			<!-- add-photo modal div -->
+
+			<div class="modal-box-content" id="add_photo">
+				<span>
+					<button id="js-modal-back">
+						<img id="modal-add-arrow-img" src="/assets/icons/back.png" alt="">
+					</button>
+				</span>
+				<span class="js-close">&times;</span>
+				<h2 id="modal-add-title">Ajout photo</h2>
+				<div class="modal-add-box">
+					<div id="modal-add-jpg">
+						<div id="modal-add-jpg-container"></div>
+						<img class="modal-add-element" id="modal-add-img" src="/assets/icons/modal-add.png" alt="">
+
+						<label for="modal-add-input" id="modal-add-jpg-btn">+ Ajouter
+							photo</label>
+						<p class="modal-add-element" id="modal-add-text">jpg, png : 4mo max</p>
+					</div>
+					<form id="modal-add-form" action="">
+						<input class="modal-add-element" type="file" name="image" accept="image/*" id="modal-add-input">
+						<label for="title">Titre</label>
+						<input type="text" name="title" id="title">
+						<label for="category">Catégorie</label>
+						<div id="datalist">
+							<input list="categories" name="categories" id="category">
+							<i id="datalist-icon" class="icon iconfont icon-arrow"></i>
+							<datalist id="categories"></datalist>
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-border"></div>
+				<div class="modal-btns">
+					<button type="submit" form="modal-add-form" id="modal-box-validate">Valider</button>
+				</div>
+			</div>
+
+		</aside>
+
+
 		<section id="introduction">
 			<figure>
-				<img src="./assets/images/sophie-bluel.png" alt="">
+				<img src="/assets/images/sophie-bluel.png" alt="">
+				<div class="modal-modify-btn">
+					<div id="introduction-modal">
+						<img src="assets/icons/pen-to-square-thin.png" alt="">
+						<a href="#modal-box1" class="js-modal">modifier</a>
+					</div>
+				</div>
 			</figure>
+
+
 			<article>
+
+				<div class="modal-modify-btn" >
+					<div id="article-modal">
+						<img src="assets/icons/pen-to-square-thin.png" alt="">
+						<a href="#modal-box1" class="js-modal">modifier</a>
+					</div>
+				</div>
 				<h2>Designer d'espace</h2>
 				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
 					finale du chantier.</p>
@@ -43,16 +125,24 @@
 		</section>
 		<section id="portfolio">
 			<h2>Mes Projets</h2>
-			<div>
-				<button class="btn-all">Tous</button>
-				<button class="btn-objects">Objets</button>
-				<button class="btn-flats">Appartements</button>
-				<button class="btn-hotels">Hôtels & restaurants</button>
+			<div class="modal-modify-btn">
+				<div id="portfolio-modal">
+					<img src="assets/icons/pen-to-square-thin.png" alt="">
+					<a href="#modal-box1" class="js-modal">modifier</a>
+				</div>
 			</div>
+			<article>
+				<div class="filter">
+					<button class="short buttons btn-all">Tous</button>
+					<button class="short buttons btn-objects">Objets</button>
+					<button class="long buttons btn-flats">Appartements</button>
+					<button class="long buttons btn-hotels">Hôtels & restaurants</button>
+				</div>
+			</article>
 			<div class="gallery">
 			</div>
 		</section>
-		<script src="works.js"></script>
+
 		<section id="contact">
 			<h2>Contact</h2>
 			<p>Vous avez un projet ? Discutons-en !</p>
@@ -68,7 +158,6 @@
 		</section>
 
 	</main>
-
 	<footer>
 		<nav>
 			<ul>
@@ -76,6 +165,10 @@
 			</ul>
 		</nav>
 	</footer>
+	<script src="add_photo.js"></script>
+	<script src="works.js"></script>
+	<script src="modal.js"></script>
+
 </body>
 
 </html>
